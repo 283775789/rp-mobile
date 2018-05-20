@@ -1,0 +1,30 @@
+/* ------------------------------ 重置mint-ui ------------------------------ */
+.mint-header-title {
+  font-size: 18px;
+}
+
+.mintui-back:before {
+  font-size: 22px;
+}
+
+.mint-header.xindex .mint-header-title:before {
+  content: "";
+  display: inline-block;
+  height: 44px;
+  width: 30px;
+  background-image: url(/static/images/logo.png);
+  background-position: center 45%;
+  background-size: 25px auto;
+  background-repeat: no-repeat;
+  vertical-align: middle;
+}
+
+
+/* 底部导航 */
+.mint-tab-item-label {
+  color: #999;
+}
+
+.mint-tab-item {
+  padding: 5px 0;
+}

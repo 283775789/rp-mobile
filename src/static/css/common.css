@@ -1,0 +1,253 @@
+/* ------------------------------ 图标 ------------------------------ */
+.pl-ico {
+  box-sizing: content-box;
+  display: inline-block;
+  padding: 1px;
+  vertical-align: middle;
+  background-image: url(../images/icons.png);
+  background-origin: content-box;
+  background-repeat: no-repeat;
+}
+
+.pl-ico.xmore {
+  position: relative;
+  top: -1px;
+  margin-left: .25rem;
+}
+
+/* ------------------------------ 布局 ------------------------------ */
+/* 头部 */
+.pl-header {
+  height: 2.2rem;
+  background-color: #2bbc61;
+}
+
+/* 页脚 */
+.pl-footer {
+  height: 2.55rem;
+}
+
+/* 主体 */
+.pl-body {
+  position: absolute;
+  top: 2.2rem;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.pl-body.xwhite {
+  background: #fff;
+}
+
+.pl-footer ~ .pl-body {
+  bottom: 2.55rem;
+}
+
+/* ------------------------------ 元件 ------------------------------ */
+/* 圆点 */
+.pl-dot {
+  display: inline-block;
+  height: .3rem;
+  width: .3rem;
+  border-radius: 50%;
+  background: #fe8451;
+  vertical-align: middle;
+}
+
+/* ------------------------------ 通用 ------------------------------ */
+/* banner图 */
+.pl-swiper {
+  height: 6rem;
+}
+
+.pl-swiper-img {
+  width: 100%;
+  height: 100%;
+}
+
+.mint-swipe-indicators {
+  left: auto;
+  right: .75rem;
+  transform: none;
+}
+
+/* 卡片 */
+.pl-card {
+  padding: .75rem;
+  background-color: #fff;
+}
+
+.pl-card + .pl-card {
+  margin-top: .5rem;;
+}
+
+.pl-card.xbb {
+  position: relative;
+}
+
+.pl-card.xbb:after {
+  content: " ";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 1px;
+  width:100%;
+  border-bottom: 1px solid #dce5ea;
+  color: #dedfe0;
+  -webkit-transform-origin: 0 2px;
+  transform-origin: 0 2px;
+  -webkit-transform: scaleY(0.5);
+  transform: scaleY(0.5);
+}
+
+/* 模块图标 */
+.pl-mi {
+  display: block;
+  font-size: .65rem;
+  text-align: center;
+}
+
+
+/* 标题 */
+.pl-title {
+  position: relative;
+  display: flex;
+  padding: .75rem .5rem;
+  align-items: center;
+}
+
+.pl-title:after {
+  content: " ";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 1px;
+  width:100%;
+  border-bottom: 1px solid #dce5ea;
+  color: #dedfe0;
+  -webkit-transform-origin: 0 2px;
+  transform-origin: 0 2px;
+  -webkit-transform: scaleY(0.5);
+  transform: scaleY(0.5);
+}
+
+.pl-card > .pl-title {
+  margin: -0.75rem -0.75rem .75rem;
+}
+
+.pl-title-left {
+  flex: 1;
+  font-size: .85rem;
+  color: #2dbe60;
+}
+
+.pl-title-right {
+  color: #999;
+  font-size: .7rem;
+  text-align: right;
+}
+
+.pl-title-left > .pl-ico {
+  margin-right: .25rem;
+}
+
+/* 信息 */
+.pl-info {
+  position: relative;
+  display: block;
+  padding: 0 0 .75rem .5rem;
+  margin-bottom: .75rem;
+}
+
+.pl-info:after {
+  content: " ";
+  position: absolute;
+  left: .5rem;
+  bottom: 0;
+  right: 0;
+  height: 1px;
+  width:100%;
+  border-bottom: 1px solid #dce5ea;
+  color: #dedfe0;
+  -webkit-transform-origin: 0 2px;
+  transform-origin: 0 2px;
+  -webkit-transform: scaleY(0.5);
+  transform: scaleY(0.5);
+}
+
+.pl-info-title {
+  font-size: .75rem;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+
+.pl-info-title > .pl-dot {
+  position: absolute;
+  left: 0;
+  top: 12px;
+  margin-top: -3px;
+}
+
+.pl-info-prop {
+  margin-right: 10px;
+  font-size: .6rem;
+  color: #999;
+}
+
+/* 文章 */
+.pl-artical {
+  padding: 1.25rem .75rem;
+  background: #fff;
+}
+
+.pl-artical-title {
+  font-size: 1rem;
+}
+
+.pl-artical-props {
+  position: relative;
+  line-height: 2;
+  padding-bottom: .3rem;
+  margin-bottom: 1rem;
+}
+
+.pl-artical-props > span {
+  margin-right: .5rem;
+  font-size: .6rem;
+  color: #999;
+}
+
+.pl-artical-props:after {
+  content: " ";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 1px;
+  width:100%;
+  border-bottom: 1px solid #dce5ea;
+  color: #dedfe0;
+  -webkit-transform-origin: 0 2px;
+  transform-origin: 0 2px;
+  -webkit-transform: scaleY(0.5);
+  transform: scaleY(0.5);
+}
+
+/* 无数据 */
+.pl-nodata {
+  padding: 1.5rem 0;
+  text-align: center;
+}
+
+.pl-nodata > p {
+  color: #999;
+  line-height: 2;
+}
+
+/* ------------------------------ 通用 ------------------------------ */

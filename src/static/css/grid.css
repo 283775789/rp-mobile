@@ -1,0 +1,19 @@
+/* ---------------------------- 等分栅格 -------------------------------- */
+.pl-grid { margin: -10px; }
+.pl-grid:before,
+.pl-grid:after { content: " "; display: table; }
+.pl-grid:after { clear: both; }
+.pl-grid-col { float: left; width: 100%; min-height: 1px; padding: 10px; }
+.pl-grid.x1 > .pl-grid-col { width: 100%; }
+.pl-grid.x2 > .pl-grid-col { width: 50%; }
+.pl-grid.x3 > .pl-grid-col { width: 33.33333%; }
+.pl-grid.x4 > .pl-grid-col { width: 25%; }
+.pl-grid.x5 > .pl-grid-col { width: 20%; }
+.pl-grid.x6 > .pl-grid-col { width: 16.66667%; }
+.pl-grid.x7 > .pl-grid-col { width: 14.28571%; }
+.pl-grid.x8 > .pl-grid-col { width: 12.5%; }
+.pl-grid.x9 > .pl-grid-col { width: 11.11111%; }
+.pl-grid.x10 > .pl-grid-col { width: 10%; }
+.pl-grid.x11 > .pl-grid-col { width: 9.09091%; }
+.pl-grid.x12 > .pl-grid-col { width: 8.33333%; }
+
