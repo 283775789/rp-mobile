@@ -104,6 +104,99 @@
   transform: scaleY(0.5);
 }
 
+/* 通知行 */
+.pl-noticeline {
+  display: flex;
+  height: .7rem;
+  line-height: .7rem;
+  font-size: .6rem;
+  overflow: hidden;
+}
+
+.pl-noticeline-left {
+  color: #2dbe60;
+}
+
+.pl-noticeline-right {
+  flex: 1;
+  min-width: 0;
+}
+
+@keyframes notice2 {
+  0% { top:0; }
+  47% { top:0; }
+  50% { top:-0.7rem; }
+  97% { top:-0.7rem; }
+  97.1% { top:0.7rem; }
+  100% { top:0; }
+}
+
+@keyframes notice3 {
+  0% { top:0; }
+  30% { top:0; }
+  33% { top:-0.7rem; }
+  63% { top:-0.7rem; }
+  66% { top:-1.4rem; }
+  97% { top:-1.4rem; }
+  97.1% { top:0.7rem; }
+  100% { top:0; }
+}
+
+@keyframes notice4 {
+  0% { top:0; }
+  22% { top:0; }
+  25% { top:-0.7rem; }
+  47% { top:-0.7rem; }
+  50% { top:-1.4rem; }
+  77% { top:-1.4rem; }
+  80% { top:-2.1rem; }
+  97% { top:-2.1rem; }
+  97.1% { top:0.7rem; }
+  100% { top: 0rem; }
+}
+
+@keyframes notice5 {
+  0% { top:0; }
+  17% { top:0; }
+  20% { top:-0.7rem; }
+  37% { top:-0.7rem; }
+  40% { top:-1.4rem; }
+  57% { top:-1.4rem; }
+  60% { top:-2.1rem; }
+  77% { top:-2.1rem; }
+  80% { top:-2.8rem; }
+  97% { top:-2.8rem; }
+  97.1% { top:0.7rem; }
+  100% { top:0; }
+}
+
+.pl-noticeline-content {
+  position: relative;
+}
+
+.pl-noticeline-content.x2 {
+  animation: notice2 6s infinite;
+}
+
+.pl-noticeline-content.x3 {
+  animation: notice3 9s infinite;
+}
+
+.pl-noticeline-content.x4 {
+  animation: notice4 12s infinite;
+}
+
+.pl-noticeline-content.x5 {
+  animation: notice5 15s infinite;
+}
+
+.pl-noticeline-content > a {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 /* 模块图标 */
 .pl-mi {
   display: block;
@@ -142,8 +235,12 @@
 
 .pl-title-left {
   flex: 1;
+  min-width: 0;
   font-size: .85rem;
   color: #2dbe60;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .pl-title-right {

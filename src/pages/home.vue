@@ -2,10 +2,9 @@
   <div>
     <mt-header class="pl-header xindex" fixed title="资源平台" />>
 
-    <mt-tabbar v-if="$route.meta.pageLevel===1" class="pl-footer" fixed v-model="selected">
+    <mt-tabbar class="pl-footer" fixed v-model="selected">
       <mt-tab-item id="首页"><i class="pl-ico xhome" slot="icon"></i>首页</mt-tab-item>
       <mt-tab-item id="卷库"><i class="pl-ico xtestpaper" slot="icon"></i>卷库</mt-tab-item>
-      <mt-tab-item id="试题篮"><i class="pl-ico xcar" slot="icon"></i>试题篮</mt-tab-item>
       <mt-tab-item id="我的"><i class="pl-ico xme" slot="icon"></i>我的</mt-tab-item>
     </mt-tabbar>
 
@@ -15,6 +14,23 @@
         <mt-swipe-item><img class="pl-swiper-img" src="/static/images/banner/1.png" /></mt-swipe-item>
         <mt-swipe-item><img class="pl-swiper-img" src="/static/images/banner/1.png" /></mt-swipe-item>
       </mt-swipe>
+
+      <div class="pl-card xbb">
+        <div class="pl-noticeline">
+          <div class="pl-noticeline-left">系统通知：</div>
+          <div class="pl-noticeline-right">
+            <!-- 最多放5条滚动通知：请修改下面对应的class为x+通知的数目 -->
+            <div class="pl-noticeline-content" :class="[`x5`]">
+              <a>1.通知标题1通知标题1通知标题1通知标题1通知标题1通知标题1通知标题1通知标题1</a>
+              <a>2.通知标题2通知标题2通知标题2通知标题2通知标题2通知标题2通知标题2通知标题2</a>
+              <a>3.通知标题3通知标题3通知标题3通知标题3通知标题3通知标题3通知标题3通知标题3</a>
+              <a>4.通知标题4通知标题4通知标题4通知标题4通知标题4通知标题4通知标题4通知标题4</a>
+              <a>5.通知标题5通知标题5通知标题5通知标题5通知标题5通知标题5通知标题5通知标题5</a>
+            </div>
+            <!-- /最多放5条滚动通知 -->
+          </div>
+        </div>
+      </div>
 
       <div class="pl-card xbb">
         <ul class="pl-grid x3">
