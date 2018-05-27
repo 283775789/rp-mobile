@@ -1,14 +1,6 @@
 <template>
-  <div>
-    <mt-header class="pl-header xindex" fixed title="资源平台" />>
-
-    <mt-tabbar class="pl-footer" fixed v-model="selected">
-      <mt-tab-item id="首页"><i class="pl-ico xhome" slot="icon"></i>首页</mt-tab-item>
-      <mt-tab-item id="卷库"><i class="pl-ico xtestpaper" slot="icon"></i>卷库</mt-tab-item>
-      <mt-tab-item id="我的"><i class="pl-ico xme" slot="icon"></i>我的</mt-tab-item>
-    </mt-tabbar>
-
-    <div class="pl-body">
+  <div class="pl-body">
+    <div class="pl-body-content">
       <mt-swipe class="pl-swiper" :auto="4000">
         <mt-swipe-item><img class="pl-swiper-img" src="/static/images/banner/1.png" /></mt-swipe-item>
         <mt-swipe-item><img class="pl-swiper-img" src="/static/images/banner/1.png" /></mt-swipe-item>
@@ -16,7 +8,7 @@
       </mt-swipe>
 
       <div class="pl-card xbb">
-        <div class="pl-noticeline">
+        <div class="pl-noticeline" @click="$router.push('/me/notice')">
           <div class="pl-noticeline-left">系统通知：</div>
           <div class="pl-noticeline-right">
             <!-- 最多放5条滚动通知：请修改下面对应的class为x+通知的数目 -->
@@ -33,7 +25,7 @@
       </div>
 
       <div class="pl-card xbb">
-        <ul class="pl-grid x3">
+        <ul class="pl-grid x4">
           <li class="pl-grid-col">
             <a class="pl-mi">
               <i class="pl-ico xgpm"></i>
@@ -42,8 +34,8 @@
           </li>
           <li class="pl-grid-col">
             <a class="pl-mi">
-              <i class="pl-ico xtps"></i>
-              <div>试卷查询</div>
+              <i class="pl-ico xec"></i>
+              <div>试题篮</div>
             </a>
           </li>
           <li class="pl-grid-col">
@@ -55,19 +47,7 @@
           <li class="pl-grid-col">
             <a class="pl-mi">
               <i class="pl-ico xgpr"></i>
-              <div>组卷记录</div>
-            </a>
-          </li>
-          <li class="pl-grid-col">
-            <a class="pl-mi">
-              <i class="pl-ico xtpdown"></i>
-              <div>试卷下载记录</div>
-            </a>
-          </li>
-          <li class="pl-grid-col">
-            <a class="pl-mi">
-              <i class="pl-ico xtpdel"></i>
-              <div>试卷删除记录</div>
+              <div>试卷查询</div>
             </a>
           </li>
         </ul>
@@ -75,31 +55,54 @@
 
       <div class="pl-card">
         <div class="pl-title">
-          <h3 class="pl-title-left"><i class="pl-ico xnotice"></i>通知公告</h3>
-          <router-link to="/notices" class="pl-title-right">更多<i class="pl-ico xmore"></i></router-link>
+          <h3 class="pl-title-left"><i class="pl-ico xpaper"></i>最近组卷</h3>
+          <router-link to="/me/group-paper" class="pl-title-right">更多<i class="pl-ico xmore"></i></router-link>
         </div>
 
-        <router-link to="/notices/detail" class="pl-info">
-          <div class="pl-info-title">
-            <i class="pl-dot"></i>
-            <span>通知标题通知标题通知标题通知标题通知标题</span>
+        <div class="pl-grouppaper">
+          <div class="pl-grouppaper-left">
+            <i class="pl-ico xcover-person"></i>
+            <h3>期未考试</h3>
           </div>
-          <div class="pl-props">
-            <span class="pl-info-prop">学校公告</span>
-            <span class="pl-info-prop">2018-03-25 01:10</span>
+          <div class="pl-grouppaper-body">
+            <h3 class="pl-grouppaper-title">新目标（Go for it）版2017-2018学年七年级英语上学期期中综合能力评估试题套卷</h3>
+            <div class="pl-grouppaper-props">
+              <span>中南讯智</span>
+              <span>刘老师</span>
+              <span>2018-03-25</span>
+            </div>
           </div>
-        </router-link>
+        </div>
 
-        <router-link to="/notices/detail" class="pl-info">
-          <div class="pl-info-title">
-            <i class="pl-dot"></i>
-            <span>系统停止、系统公告、学校公告，管理员发布通系统停止、系统公告、学校公告，管理员发布通</span>
+        <div class="pl-grouppaper">
+          <div class="pl-grouppaper-left">
+            <i class="pl-ico xcover-school"></i>
+            <h3>单元测试</h3>
           </div>
-          <div class="pl-props">
-            <span class="pl-info-prop">学校公告</span>
-            <span class="pl-info-prop">2018-03-25 01:10</span>
+          <div class="pl-grouppaper-body">
+            <h3 class="pl-grouppaper-title">新目标（Go for it）版2017-2018学年七年级英语上学期期中综合能力评估试题套卷</h3>
+            <div class="pl-grouppaper-props">
+              <span>中南讯智</span>
+              <span>刘老师</span>
+              <span>2018-03-25</span>
+            </div>
           </div>
-        </router-link>
+        </div>
+
+        <div class="pl-grouppaper">
+          <div class="pl-grouppaper-left">
+            <i class="pl-ico xcover-cloud"></i>
+            <h3>期中考试</h3>
+          </div>
+          <div class="pl-grouppaper-body">
+            <h3 class="pl-grouppaper-title">新目标（Go for it）版2017-2018学年七年级英语上学期期中综合能力评估试题套卷</h3>
+            <div class="pl-grouppaper-props">
+              <span>中南讯智</span>
+              <span>刘老师</span>
+              <span>2018-03-25</span>
+            </div>
+          </div>
+        </div>
 
         <pl-nodata>无数据样式</pl-nodata>
       </div>
@@ -109,6 +112,9 @@
 
 <script>
 export default {
-  name: 'home'
+  name: 'home',
+  created () {
+    this.$store.commit('setPageTitle', '资源平台')
+  }
 }
 </script>

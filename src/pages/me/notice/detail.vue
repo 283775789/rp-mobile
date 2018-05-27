@@ -13,6 +13,6 @@
 
 <script>
 export default {
-  name: 'noticeDetail'
+  name: 'me-notice-detail'
 }
 </script>
