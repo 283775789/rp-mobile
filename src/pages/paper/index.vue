@@ -9,7 +9,138 @@
     <a class="pl-headerbtn" @click="openPropsPopup">试题属性</a>
 
     <div class="pl-body-content">
+      <!-- 内容头部 -->
+      <div class="pl-tabs">
+        <a class="xactive">按章节</a>
+        <a>按知识点</a>
+      </div>
+      <div class="pl-card xbb xenter">
+        <div>教材：湘教版 二年级 上册</div>
+        <a class="pl-iconbtn" @click="$router.push('/select-book')">
+          <i class="pl-ico xenter"></i>
+        </a>
+      </div>
+      <pl-search v-model="searchText" placeholder="请输入关键字..." />
+      <!-- /内容头部 -->
 
+      <!-- 内容区 -->
+      <ul class="pl-tree" style="margin-top:.5rem;">
+        <li class="pl-tree-node" :class="{xopen:1===1}">
+          <div class="pl-tree-content">
+            <div class="pl-tree-body">
+              <a class="pl-tree-collapse pl-iconbtn"><i class="pl-ico xcollapse" :class="{xopen:1===1}"></i></a>
+              <span>第一单元</span>
+            </div>
+            <a class="pl-tree-search pl-iconbtn"><i class="pl-ico xsearch2"></i></a>
+          </div>
+          <ul class="pl-tree-children">
+            <li class="pl-tree-node" :class="{xopen:1===1}">
+              <div class="pl-tree-content">
+                <div class="pl-tree-body">
+                  <a class="pl-tree-collapse pl-iconbtn"><i class="pl-ico xcollapse2" :class="{xopen:1===1}"></i></a>
+                  <span>第1章 我们与数学</span>
+                </div>
+                <a class="pl-tree-search pl-iconbtn"><i class="pl-ico xsearch2"></i></a>
+              </div>
+              <ul class="pl-tree-children">
+                <li class="pl-tree-node">
+                  <div class="pl-tree-content">
+                    <div class="pl-tree-body">
+                      <span>1.1生活 数学</span>
+                    </div>
+                    <a class="pl-tree-search pl-iconbtn"><i class="pl-ico xsearch2"></i></a>
+                  </div>
+                </li>
+                <li class="pl-tree-node">
+                  <div class="pl-tree-content">
+                    <div class="pl-tree-body">
+                      <span>1.2活动 思考数学的乐趣</span>
+                    </div>
+                    <a class="pl-tree-search pl-iconbtn"><i class="pl-ico xsearch2"></i></a>
+                  </div>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li class="pl-tree-node">
+          <div class="pl-tree-content">
+            <div class="pl-tree-body">
+              <a class="pl-tree-collapse pl-iconbtn"><i class="pl-ico xcollapse"></i></a>
+              <span>第二单元</span>
+            </div>
+            <a class="pl-tree-search pl-iconbtn"><i class="pl-ico xsearch2"></i></a>
+          </div>
+          <ul class="pl-tree-children">
+            <li class="pl-tree-node">
+              <div class="pl-tree-content">
+                <div class="pl-tree-body">
+                  <a class="pl-tree-collapse pl-iconbtn"><i class="pl-ico xcollapse2"></i></a>
+                  <span>第1章 我们与数学</span>
+                </div>
+                <a class="pl-tree-search pl-iconbtn"><i class="pl-ico xsearch2"></i></a>
+              </div>
+              <ul class="pl-tree-children">
+                <li class="pl-tree-node">
+                  <div class="pl-tree-content">
+                    <div class="pl-tree-body">
+                      <span>1.1生活 数学</span>
+                    </div>
+                    <a class="pl-tree-search pl-iconbtn"><i class="pl-ico xsearch2"></i></a>
+                  </div>
+                </li>
+                <li class="pl-tree-node">
+                  <div class="pl-tree-content">
+                    <div class="pl-tree-body">
+                      <span>1.2活动 思考数学的乐趣</span>
+                    </div>
+                    <a class="pl-tree-search pl-iconbtn"><i class="pl-ico xsearch2"></i></a>
+                  </div>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li class="pl-tree-node">
+          <div class="pl-tree-content">
+            <div class="pl-tree-body">
+              <a class="pl-tree-collapse pl-iconbtn"><i class="pl-ico xcollapse"></i></a>
+              <span>第三单元</span>
+            </div>
+            <a class="pl-tree-search pl-iconbtn"><i class="pl-ico xsearch2"></i></a>
+          </div>
+          <ul class="pl-tree-children">
+            <li class="pl-tree-node">
+              <div class="pl-tree-content">
+                <div class="pl-tree-body">
+                  <a class="pl-tree-collapse pl-iconbtn"><i class="pl-ico xcollapse2"></i></a>
+                  <span>第1章 我们与数学</span>
+                </div>
+                <a class="pl-tree-search pl-iconbtn"><i class="pl-ico xsearch2"></i></a>
+              </div>
+              <ul class="pl-tree-children">
+                <li class="pl-tree-node">
+                  <div class="pl-tree-content">
+                    <div class="pl-tree-body">
+                      <span>1.1生活 数学</span>
+                    </div>
+                    <a class="pl-tree-search pl-iconbtn"><i class="pl-ico xsearch2"></i></a>
+                  </div>
+                </li>
+                <li class="pl-tree-node">
+                  <div class="pl-tree-content">
+                    <div class="pl-tree-body">
+                      <span>1.2活动 思考数学的乐趣</span>
+                    </div>
+                    <a class="pl-tree-search pl-iconbtn"><i class="pl-ico xsearch2"></i></a>
+                  </div>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <!-- /内容区 -->
     </div>
 
     <!-- 弹出层：筛选学段 -->
@@ -212,7 +343,8 @@ export default {
   data () {
     return {
       learningSectionPopupVisible: false,
-      propsPopupVisible: false
+      propsPopupVisible: false,
+      searchText: ''
     }
   },
   methods: {

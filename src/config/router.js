@@ -4,6 +4,7 @@ import Home from '@/pages/home'
 
 // 组卷
 import Paper from '@/pages/paper'
+import SelectBook from '@/pages/paper/select-book'
 
 // 我的
 import Me from '@/pages/me'
@@ -90,6 +91,13 @@ export default new Router({
       component: Paper,
       meta: {
         pageLevel: 1
+      }
+    },
+    {
+      path: '/select-book',
+      component: SelectBook,
+      meta: {
+        pageLevel: 2
       }
     }
   ]
