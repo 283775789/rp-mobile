@@ -18,18 +18,34 @@
 /* ------------------------------ 布局 ------------------------------ */
 /* 头部 */
 .pl-header {
+  z-index: 3000 !important;
   height: 2.2rem;
   background-color: #2bbc61;
 }
 
+.pl-headerbody,
 .pl-headerbtn {
   position: fixed;
   top: 0;
-  right: 0;
-  z-index: 1;
+  z-index: 3001;
   line-height: 2.2rem;
-  padding-right: .75rem;
   color: #fff;
+}
+
+
+.pl-headerbody {
+  left: 50%;
+  width: 8rem;
+  margin-left: -4rem;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.pl-headerbtn {
+  right: 0;
+  padding-right: .75rem;
 }
 
 /* 页脚 */
@@ -56,7 +72,7 @@
 /* 主体 */
 .pl-body {
   position: absolute;
-  top: 2.2rem;
+  top: 0;
   bottom: 0;
   left: 0;
   width: 100%;
@@ -64,6 +80,10 @@
 
 .pl-body.xwhite {
   background: #fff;
+}
+
+.pl-header ~ .pl-body {
+  top: 2.2rem;
 }
 
 .pl-footer ~ .pl-body {
@@ -88,7 +108,25 @@
   vertical-align: middle;
 }
 
+/* 数值 */
+.pl-num {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #ff6600;
+}
+
+/* 次要文字 */
+.pl-minortext {
+  font-style: .6rem;
+  color: #666;
+}
+
 /* ------------------------------ 通用 ------------------------------ */
+/* 间距容器 */
+.pl-xspacebox {
+  padding: 0 .75rem;
+}
+
 /* banner图 */
 .pl-swiper {
   height: 6rem;
@@ -132,6 +170,16 @@
   transform-origin: 0 2px;
   -webkit-transform: scaleY(0.5);
   transform: scaleY(0.5);
+}
+
+.pl-card.xbr {
+  border-radius: 5px;
+  text-align: center;
+  box-shadow: 0 3px 6px #e0e3e1;
+}
+
+.pl-card.xbr.xsummary {
+  margin-top: -0.5rem;
 }
 
 /* 通知行 */
@@ -442,6 +490,133 @@
 
 .pl-grouppaper-props > span + span {
   margin-left: .5rem;
+}
+
+/* 我的-头部 */
+.pl-meheader {
+  display: flex;
+  height: 9rem;
+  align-items: center;
+  background: url(../images/me-bg.png) no-repeat center top;
+  background-size: 100% auto;
+  text-align: center;
+}
+
+.pl-avatar {
+  display: inline-block;
+  width: 3rem;
+  height: 3rem;
+  border: 2px solid #fff;
+  border-radius: 50%;
+}
+
+.pl-meheader-userinfo {
+  flex: 1;
+  min-width: 0;
+  color: #fff;
+  text-align: center;
+}
+
+.pl-meheader-username {
+  font-size: 1rem;
+}
+
+.pl-meheader-userprops {
+  font-size: .6rem;
+}
+
+/* 标签 */
+.pl-tag {
+  position: relative;
+  height: 1.65rem;
+}
+
+.pl-tag-body {
+  display: block;
+  line-height: 1.65rem;
+  padding: 0 .2rem;
+  background-color: #f5f5f5;
+  border-radius: 3px;
+  text-align: center;
+  font-size: .65rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.pl-tag.xselected > .pl-tag-body {
+  color: #2dbe60;
+}
+
+.pl-tag.xselected:after {
+  content: "";
+  position: absolute;
+  right: -0.4rem;
+  top: -0.4rem;
+  width: .75rem;
+  height: .75rem;
+  background: url(../images/selected2.png) no-repeat;
+  background-size: contain;
+}
+
+/* 弹出菜单 */
+.pl-popup-body {
+  max-height: 20rem;
+  padding: .75rem;
+  background: #fff;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.pl-popup-label {
+  clear: both;
+  padding:0 0 .5rem;
+  color: #666;
+  font-size: .7rem;
+}
+
+.pl-popup-footer {
+  display: flex;
+}
+
+.pl-popup-btn {
+  position: relative;
+  flex: 1;
+  height: 2.25rem;
+  background: #fff;
+  color: #2dbe60;
+  line-height: 2.25rem;
+  text-align: center;
+}
+
+.pl-popup-btn:before {
+  content: " ";
+  position: absolute;
+  left: 0;
+  top: -1px;
+  right: 0;
+  height: 1px;
+  width:100%;
+  border-bottom: 1px solid #dce5ea;
+  color: #dedfe0;
+  -webkit-transform-origin: 0 2px;
+  transform-origin: 0 2px;
+  -webkit-transform: scaleY(0.5);
+  transform: scaleY(0.5);
+}
+
+.pl-popup-btn:last-child {
+  font-size: .8rem;
+  background: #2bbc61;
+  color: #fff;
+}
+
+.pl-grid.xpopup {
+  margin: -0.25rem -0.25rem .75rem;
+}
+
+.pl-grid.xpopup > .pl-grid-col {
+  padding: .25rem;
 }
 
 /* ------------------------------ 通用 ------------------------------ */

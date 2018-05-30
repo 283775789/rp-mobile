@@ -2,8 +2,12 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Home from '@/pages/home'
 
+// 组卷
+import Paper from '@/pages/paper'
+
 // 我的
 import Me from '@/pages/me'
+import MeHome from '@/pages/me/home'
 import MeNotice from '@/pages/me/notice'
 import MeNoticeList from '@/pages/me/notice/list'
 import MeNoticeDetail from '@/pages/me/notice/detail'
@@ -25,10 +29,18 @@ export default new Router({
     {
       path: '/me',
       component: Me,
+      redirect: 'home',
       meta: {
         pageLevel: 1
       },
       children: [
+        {
+          path: 'home',
+          component: MeHome,
+          meta: {
+            pageLevel: 1
+          }
+        },
         {
           path: 'notice',
           component: MeNotice,
@@ -72,6 +84,13 @@ export default new Router({
           }
         }
       ]
+    },
+    {
+      path: '/paper',
+      component: Paper,
+      meta: {
+        pageLevel: 1
+      }
     }
   ]
 })
