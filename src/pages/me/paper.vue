@@ -2,7 +2,7 @@
   <div class="pl-body">
     <div class="pl-body-content">
       <div class="pl-card xbb">
-        <div class="pl-grouppaper">
+        <div class="pl-grouppaper" @click="$router.push('/questions')">
           <div class="pl-grouppaper-left">
             <i class="pl-ico xcover-person"></i>
             <h3>期未考试</h3>
@@ -18,7 +18,7 @@
           </div>
         </div>
 
-        <div class="pl-grouppaper">
+        <div class="pl-grouppaper" @click="$router.push('/questions')">
           <div class="pl-grouppaper-left">
             <i class="pl-ico xcover-school"></i>
             <h3>单元测试</h3>
@@ -34,7 +34,7 @@
           </div>
         </div>
 
-        <div class="pl-grouppaper">
+        <div class="pl-grouppaper" @click="$router.push('/questions')">
           <div class="pl-grouppaper-left">
             <i class="pl-ico xcover-cloud"></i>
             <h3>期中考试</h3>
@@ -50,7 +50,7 @@
           </div>
         </div>
 
-        <div class="pl-grouppaper">
+        <div class="pl-grouppaper" @click="$router.push('/questions')">
           <div class="pl-grouppaper-left">
             <i class="pl-ico xcover-cloud"></i>
             <h3>期中考试</h3>

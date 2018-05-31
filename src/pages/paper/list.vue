@@ -70,9 +70,9 @@
 
 <script>
 export default {
-  name: 'me-group-paper',
+  name: 'pl-papers',
   created () {
-    this.$store.commit('setPageTitle', '试卷下载记录')
+    this.$store.commit('setPageTitle', '试卷列表')
   }
 }
 </script>

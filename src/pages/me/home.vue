@@ -40,7 +40,7 @@
               </a>
             </li>
             <li class="pl-grid-col">
-              <a class="pl-mi">
+              <a class="pl-mi" @click="$router.push('/me/questions')">
                 <i class="pl-ico xmex"></i>
                 <div>试题收藏</div>
               </a>

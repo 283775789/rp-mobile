@@ -50,9 +50,16 @@
 
 /* 页脚 */
 .pl-footer {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
   height: 2.55rem;
+  background: #fff;
 }
 
+.pl-footer > a:before,
 .pl-footer .mint-tab-item:before {
   content: " ";
   position: absolute;
@@ -67,6 +74,27 @@
   transform-origin: 0 2px;
   -webkit-transform: scaleY(0.5);
   transform: scaleY(0.5);
+}
+
+/* 作为工具按钮 */
+.pl-footer.xtools {
+  display: flex;
+}
+
+.pl-footer.xtools > a {
+  flex: 1;
+  height: 2.5rem;
+  line-height: 2.5rem;
+  text-align: center;
+}
+
+.pl-footer.xtools > a:last-child {
+  background: #2bbc61;
+  color: #fff;
+}
+
+.pl-footer.xtools > a > .pl-ico {
+  margin-right: .25rem;
 }
 
 /* 主体 */
@@ -95,6 +123,20 @@
   height: 100%;
   overflow: auto;
   -webkit-overflow-scrolling: touch;
+}
+
+/* 文本区 */
+.pl-label {
+  font-size: .7rem;
+  color: #666;
+}
+
+.pl-textarea {
+  width: 100%;
+  height: 1rem;
+  line-height: 1rem;
+  padding: 0;
+  border: none;
 }
 
 /* ------------------------------ 元件 ------------------------------ */
@@ -139,6 +181,35 @@
   width: 0;
   height: 100%;
   vertical-align: middle;
+}
+
+/* 加载 */
+.pl-loading {
+  font-size: .7rem;
+  color: #999;
+  text-align: center;
+}
+
+.pl-loading > img {
+  width: .8rem;
+  margin-right: .25rem;
+}
+
+/* 按钮 */
+.pl-btn {
+  display: inline-block;
+  line-height: 1.4rem;
+  padding: 0 .6rem;
+  border-radius: 3px;
+}
+
+.pl-btn.xmain {
+  color: #2bbc61;
+  border:1px solid #2bbc61;
+}
+
+.pl-btn + .pl-btn {
+  margin-left: .3rem;
 }
 
 /* ------------------------------ 通用 ------------------------------ */
@@ -221,6 +292,16 @@
   padding-right: 2.5rem;
   border: none;
 }
+
+/* 卡片:试题 */
+.pl-card.xquestion {
+  padding:.5rem 0 0;
+}
+
+.pl-card.xquestion .pl-title {
+  margin: -0.5rem 0 .1rem;
+}
+
 
 /* 入口 */
 .pl-card.xenter {
@@ -356,7 +437,7 @@
 .pl-title {
   position: relative;
   display: flex;
-  padding: .75rem .5rem;
+  padding: .5rem .75rem;
   align-items: center;
 }
 
@@ -376,7 +457,7 @@
 }
 
 .pl-card > .pl-title {
-  margin: -0.75rem -0.75rem .75rem;
+  margin: -0.75rem -0.75rem 0;
 }
 
 .pl-title-left {
@@ -397,6 +478,12 @@
 
 .pl-title-left > .pl-ico {
   margin-right: .25rem;
+}
+
+
+/* 试题标题 */
+.pl-title.xquestion .pl-title-left {
+  color: #333;
 }
 
 /* 信息 */
@@ -824,6 +911,272 @@
 
 .pl-tree-node.xopen > .pl-tree-children {
   display: block;
+}
+
+/* 附件 */
+.pl-attachment {
+  display: flex;
+  height: 1.5rem;
+  padding: .5rem;
+  margin-bottom: .5rem;
+  background: #f2f2f2;
+  align-items: center;
+}
+
+.pl-attachment-name {
+  flex: 1;
+  min-width: 0;
+  padding-left: .3rem;
+  font-size: .6rem;
+  color: #666;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* 试题 */
+.pl-question {
+  position: relative;
+  padding: .5rem .75rem 0;
+  background: #fff;
+}
+
+.pl-question .pl-question {
+  padding-top: 0;
+  margin: 0 -0.75rem;
+}
+
+.pl-question + .pl-question {
+  margin-top: .5rem;
+}
+
+.pl-question:after {
+  content: " ";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 1px;
+  border-bottom: 1px solid #dce5ea;
+  color: #dedfe0;
+  -webkit-transform-origin: 0 2px;
+  transform-origin: 0 2px;
+  -webkit-transform: scaleY(0.5);
+  transform: scaleY(0.5);
+}
+
+.pl-question img {
+  max-width: 60%;
+  max-height: 6rem;
+}
+
+.pl-question-title {
+  margin-bottom: .5rem;
+  font-size: .7rem;
+  color: #333;
+}
+
+.pl-question-title:last-child {
+  padding-bottom: .5rem;
+}
+
+.pl-question-title > b {
+  font-weight: bold;
+}
+
+.pl-question-body {
+  padding-bottom: .3rem;
+  line-height: 1.1rem;
+  font-size: .6rem;
+}
+
+.pl-question-props {
+  margin-top: .3rem;
+  font-size: .6rem;
+  color: #999;
+  text-align: right;
+}
+
+.pl-question-props > span + span {
+  margin-left: .75rem;
+}
+
+.pl-question-tools {
+  position: relative;
+  margin: 0 -0.75rem;
+  padding: 0 .75rem;
+  line-height: 2.2rem;
+  background: #f7f7f7;
+  color: #666;
+  font-size: .6rem;
+  text-align: right;
+  overflow: hidden;
+}
+
+.pl-question-tools:before {
+  content: " ";
+  position: absolute;
+  left: 0;
+  top: -1px;
+  right: 0;
+  height: 1px;
+  width:100%;
+  border-bottom: 1px solid #dce5ea;
+  color: #dedfe0;
+  -webkit-transform-origin: 0 2px;
+  transform-origin: 0 2px;
+  -webkit-transform: scaleY(0.5);
+  transform: scaleY(0.5);
+}
+
+.pl-question-tools > a + a {
+  margin-left: .5rem;
+}
+
+.pl-question-tools > a > .pl-ico {
+  position: relative;
+  top: -1px;
+  margin-right: .15rem;
+}
+
+.pl-question-tool-btn {
+  width: 50%;
+  float: left;
+  margin-left: 0 !important;
+  text-align: center;
+}
+
+/* 选择 */
+.pl-question-options {
+  padding-left: .75rem;
+}
+
+.pl-question-options > li {
+  margin-bottom: .3rem;
+  text-indent: -0.75rem;
+}
+
+.pl-question-options.xjudge > li {
+  display: inline-block;
+  width: 2rem;
+  margin-right: 1.5rem
+}
+
+/* 填空 */
+.pl-question-fill > var {
+  display: inline-block;
+  width: 2rem;
+  height: 1.1rem;
+  border-bottom: 1px solid #333;
+}
+
+/* 仿表格布局:连线 */
+.pl-astable {
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.pl-astable-row {
+  display: table-row;
+}
+
+.pl-astable-col {
+  display: table-cell;
+  padding:.3rem;
+  vertical-align: top;
+}
+
+.pl-linebox {
+  margin: -0.75rem -0.75rem 0;
+  font-size: .6rem;
+}
+
+.pl-astable.xline {
+  border-collapse: separate;
+  border-spacing: .75rem;
+}
+
+.pl-astable.xline > .pl-astable-row > .pl-astable-col {
+  position: relative;
+  padding: 0;
+  border: 1px solid #ccc;
+}
+
+.pl-answer .pl-astable.xline > .pl-astable-row > .pl-astable-col {
+  background: #fff;
+}
+
+.xline-leftcircle,
+.xline-rightcircle {
+  position: absolute;
+  z-index: 1000;
+  top: 50%;
+  width: .6rem;
+  height: .6rem;
+  margin-top: -0.3rem;
+  border: 1px solid #dcdfe6;
+  border-radius: 50%;
+}
+
+.pl-astable.xline .xline-leftcircle {
+  left: .1rem;
+}
+
+.pl-astable.xline .xline-rightcircle {
+  right: .1rem;
+}
+
+.pl-astable.xline .pl-qeditor-menu {
+  left: -1px;
+  right: -1px;
+  width: auto;
+}
+
+.pl-astable.xline .pl-qeditor-body {
+  margin-top: 0;
+  padding-left: .75rem;
+  padding-right: .75rem;
+  border: none;
+}
+
+
+.pl-astable.xline .pl-astable-col:first-child .pl-qeditor-body {
+  padding-left: .2rem;
+}
+
+.pl-astable.xline .pl-astable-col:first-child .xline-leftcircle {
+  display: none;
+}
+
+.pl-astable.xline .pl-astable-col:last-child .pl-qeditor-body {
+  padding-right: .4rem;
+}
+
+.pl-astable.xline .pl-astable-col:last-child .xline-rightcircle {
+  display: none;
+}
+
+/* 试题答案 */
+.pl-answer {
+  padding: .5rem .75rem;
+  margin-top: .5rem;
+  background: #dff5e6;
+}
+
+.pl-answer-title {
+  margin-bottom: .2rem;
+  font-size: .7rem;
+}
+
+.pl-answer-note {
+  margin-bottom: .3rem;
+  font-size: .6rem;
+}
+
+.pl-answer .pl-attachment {
+  background: #fff;
 }
 
 /* ------------------------------ 通用 ------------------------------ */

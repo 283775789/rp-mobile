@@ -23,6 +23,13 @@ export default {
     return {
       selected: '首页'
     }
+  },
+  watch: {
+    $route (value) {
+      if (value.path === '/paper') {
+        this.selected = '卷库'
+      }
+    }
   }
 }
 </script>

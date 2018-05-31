@@ -46,3 +46,8 @@
 .mint-popup-top.xheader ~ .v-modal {
   top: 2.2rem;
 }
+
+/* 信息提示 */
+.mint-msgbox-confirm {
+  color: #2bbc61;
+}

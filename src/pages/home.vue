@@ -27,25 +27,25 @@
       <div class="pl-card xbb">
         <ul class="pl-grid x4">
           <li class="pl-grid-col">
-            <a class="pl-mi">
+            <a class="pl-mi" @click="$router.push('/paper')">
               <i class="pl-ico xgpm"></i>
               <div>手工组卷</div>
             </a>
           </li>
           <li class="pl-grid-col">
-            <a class="pl-mi">
+            <a class="pl-mi" @click="$router.push('/question-cart')">
               <i class="pl-ico xec"></i>
               <div>试题篮</div>
             </a>
           </li>
           <li class="pl-grid-col">
-            <a class="pl-mi">
+            <a class="pl-mi" @click="$router.push('/questions')">
               <i class="pl-ico xes"></i>
               <div>试题查询</div>
             </a>
           </li>
           <li class="pl-grid-col">
-            <a class="pl-mi">
+            <a class="pl-mi" @click="$router.push('/papers')">
               <i class="pl-ico xgpr"></i>
               <div>试卷查询</div>
             </a>
@@ -59,7 +59,7 @@
           <router-link to="/me/group-paper" class="pl-title-right">更多<i class="pl-ico xmore"></i></router-link>
         </div>
 
-        <div class="pl-grouppaper">
+        <div class="pl-grouppaper" @click="$router.push('/questions')">
           <div class="pl-grouppaper-left">
             <i class="pl-ico xcover-person"></i>
             <h3>期未考试</h3>
@@ -74,7 +74,7 @@
           </div>
         </div>
 
-        <div class="pl-grouppaper">
+        <div class="pl-grouppaper" @click="$router.push('/questions')">
           <div class="pl-grouppaper-left">
             <i class="pl-ico xcover-school"></i>
             <h3>单元测试</h3>
@@ -89,7 +89,7 @@
           </div>
         </div>
 
-        <div class="pl-grouppaper">
+        <div class="pl-grouppaper" @click="$router.push('/questions')">
           <div class="pl-grouppaper-left">
             <i class="pl-ico xcover-cloud"></i>
             <h3>期中考试</h3>
@@ -105,6 +105,7 @@
         </div>
 
         <pl-nodata>无数据样式</pl-nodata>
+        <pl-loading />
       </div>
     </div>
   </div>

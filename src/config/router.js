@@ -4,7 +4,13 @@ import Home from '@/pages/home'
 
 // 组卷
 import Paper from '@/pages/paper'
+import Papers from '@/pages/paper/list'
 import SelectBook from '@/pages/paper/select-book'
+
+// 通用
+import Questions from '@/pages/common/questions'
+import QuestionDetail from '@/pages/common/question-detail'
+import QuestionCart from '@/pages/common/question-cart'
 
 // 我的
 import Me from '@/pages/me'
@@ -15,6 +21,7 @@ import MeNoticeDetail from '@/pages/me/notice/detail'
 import MePaper from '@/pages/me/paper'
 import MeGroupPaper from '@/pages/me/group-paper'
 import MeDownloadedPaper from '@/pages/me/downloaded-paper'
+import MeQuestions from '@/pages/me/questions'
 
 Vue.use(Router)
 
@@ -83,6 +90,13 @@ export default new Router({
           meta: {
             pageLevel: 2
           }
+        },
+        {
+          path: 'questions',
+          component: MeQuestions,
+          meta: {
+            pageLevel: 2
+          }
         }
       ]
     },
@@ -94,8 +108,36 @@ export default new Router({
       }
     },
     {
+      path: '/papers',
+      component: Papers,
+      meta: {
+        pageLevel: 2
+      }
+    },
+    {
       path: '/select-book',
       component: SelectBook,
+      meta: {
+        pageLevel: 2
+      }
+    },
+    {
+      path: '/questions',
+      component: Questions,
+      meta: {
+        pageLevel: 2
+      }
+    },
+    {
+      path: '/question-detail',
+      component: QuestionDetail,
+      meta: {
+        pageLevel: 2
+      }
+    },
+    {
+      path: '/question-cart',
+      component: QuestionCart,
       meta: {
         pageLevel: 2
       }
