@@ -107,6 +107,8 @@
         <pl-nodata>无数据样式</pl-nodata>
         <pl-loading />
       </div>
+
+      <div class="pl-nomoredata"><span>无更多数据</span></div>
     </div>
   </div>
 </template>

@@ -32,6 +32,19 @@
   color: #fff;
 }
 
+.pl-headerbtn > span {
+  position: absolute;
+  right: .25rem;
+  top: .25rem;
+  height: .8rem;
+  line-height: 1;
+  padding: .1rem .2rem;
+  background: rgba(0,0,0, .6);
+  color: #fff;
+  font-size: .6rem;
+  border-radius: .4rem;
+  white-space: nowrap;
+}
 
 .pl-headerbody {
   left: 50%;
@@ -94,7 +107,9 @@
 }
 
 .pl-footer.xtools > a > .pl-ico {
-  margin-right: .25rem;
+  position: relative;
+  top: -1px;
+  margin-right: .1rem;
 }
 
 /* 主体 */
@@ -212,6 +227,22 @@
   margin-left: .3rem;
 }
 
+@keyframes moveDot {
+  0% { display: block; }
+  99% { top: .1rem; left: 95%; }
+  100% { display: none; }
+}
+
+.pl-dot {
+  position: fixed;
+  z-index: 3000;
+  width: .75rem;
+  height: .75rem;
+  background:rgba(0,0,0,.3);
+  border-radius: 50%;
+  animation: moveDot .35s ease;
+}
+
 /* ------------------------------ 通用 ------------------------------ */
 /* 间距容器 */
 .pl-xspacebox {
@@ -224,8 +255,10 @@
 }
 
 .pl-swiper-img {
-  width: 100%;
+  position: relative;
   height: 100%;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .mint-swipe-indicators {
@@ -521,6 +554,9 @@
   left: 0;
   top: 12px;
   margin-top: -3px;
+  width: .35rem;
+  height: .35rem;
+  animation: none;
 }
 
 .pl-info-prop {
@@ -717,7 +753,7 @@
 
 /* 弹出菜单 */
 .pl-popup-body {
-  max-height: 20rem;
+  max-height: 22rem;
   padding: .75rem;
   background: #fff;
   overflow: auto;
@@ -768,11 +804,15 @@
 }
 
 .pl-grid.xpopup {
-  margin: -0.25rem -0.25rem .75rem;
+  margin: -0.25rem -0.25rem .5rem;
 }
 
 .pl-grid.xpopup > .pl-grid-col {
   padding: .25rem;
+}
+
+.pl-popup-body > .pl-title {
+  margin: -0.75rem -0.75rem 0.5rem;
 }
 
 /* tab */
@@ -1177,6 +1217,51 @@
 
 .pl-answer .pl-attachment {
   background: #fff;
+}
+
+/* 设置答题卡样式 */
+.pl-answercart-note {
+  width: 4rem;
+  height: 4rem;
+  padding: .75rem .3rem;
+  background: #fff7d8;
+  color: #666;
+  font-size: .6rem;
+  text-align: center;
+}
+
+/* 无更多数据 */
+.pl-nomoredata {
+  position: relative;
+  z-index: 1;
+  padding: 1rem .75rem;
+  font-size: .7rem;
+  color: #999;
+  background: #f2f2f2;
+  text-align:center;
+}
+
+.pl-nomoredata:after {
+  content: " ";
+  position: absolute;
+  left: .75rem;
+  top: 50%;
+  right: .75rem;
+  height: 1px;
+  border-bottom: 1px solid #dce5ea;
+  color: #dedfe0;
+  -webkit-transform-origin: 0 2px;
+  transform-origin: 0 2px;
+  -webkit-transform: scaleY(0.5);
+  transform: scaleY(0.5);
+}
+
+.pl-nomoredata > span {
+  position: relative;
+  z-index: 1;
+  padding: 0 .75rem;
+  line-height: 1rem;
+  background: #f2f2f2;
 }
 
 /* ------------------------------ 通用 ------------------------------ */

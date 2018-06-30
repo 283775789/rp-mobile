@@ -2,7 +2,7 @@
   <div class="pl-body">
     <a class="pl-headerbtn" @click="clearQuestionCar">清空</a>
 
-    <div class="pl-body-content" style="padding-bottom:4rem;">
+    <div class="pl-body-content" style="padding-bottom:3rem;">
       <!-- 试卷名称 -->
       <div class="pl-card xbb" style="margin-bottom:.5rem; padding:.5rem .75rem">
         <h3 class="pl-label">试卷名称:</h3>

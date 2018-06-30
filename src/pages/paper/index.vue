@@ -51,13 +51,70 @@
                     <a class="pl-tree-search pl-iconbtn" @click="$router.push('/questions')"><i class="pl-ico xsearch2"></i></a>
                   </div>
                 </li>
-                <li class="pl-tree-node">
+                <li class="pl-tree-node" :class="{xopen:1===1}">
                   <div class="pl-tree-content">
                     <div class="pl-tree-body">
-                      <span>1.2活动 思考数学的乐趣</span>
+                      <a class="pl-tree-collapse pl-iconbtn"><i class="pl-ico xcollapse2" :class="{xopen:1===1}"></i></a>
+                      <span>第1章 我们与数学</span>
                     </div>
                     <a class="pl-tree-search pl-iconbtn" @click="$router.push('/questions')"><i class="pl-ico xsearch2"></i></a>
                   </div>
+                  <ul class="pl-tree-children">
+                    <li class="pl-tree-node">
+                      <div class="pl-tree-content">
+                        <div class="pl-tree-body">
+                          <span>1.1生活 数学</span>
+                        </div>
+                        <a class="pl-tree-search pl-iconbtn" @click="$router.push('/questions')"><i class="pl-ico xsearch2"></i></a>
+                      </div>
+                    </li>
+                    <li class="pl-tree-node" :class="{xopen:1===1}">
+                      <div class="pl-tree-content">
+                        <div class="pl-tree-body">
+                          <a class="pl-tree-collapse pl-iconbtn"><i class="pl-ico xcollapse2" :class="{xopen:1===1}"></i></a>
+                          <span>第1章 我们与数学</span>
+                        </div>
+                        <a class="pl-tree-search pl-iconbtn" @click="$router.push('/questions')"><i class="pl-ico xsearch2"></i></a>
+                      </div>
+                      <ul class="pl-tree-children">
+                        <li class="pl-tree-node">
+                          <div class="pl-tree-content">
+                            <div class="pl-tree-body">
+                              <span>1.1生活 数学</span>
+                            </div>
+                            <a class="pl-tree-search pl-iconbtn" @click="$router.push('/questions')"><i class="pl-ico xsearch2"></i></a>
+                          </div>
+                        </li>
+                        <li class="pl-tree-node" :class="{xopen:1===1}">
+                          <div class="pl-tree-content">
+                            <div class="pl-tree-body">
+                              <a class="pl-tree-collapse pl-iconbtn"><i class="pl-ico xcollapse2" :class="{xopen:1===1}"></i></a>
+                              <span>第1章 我们与数学</span>
+                            </div>
+                            <a class="pl-tree-search pl-iconbtn" @click="$router.push('/questions')"><i class="pl-ico xsearch2"></i></a>
+                          </div>
+                          <ul class="pl-tree-children">
+                            <li class="pl-tree-node">
+                              <div class="pl-tree-content">
+                                <div class="pl-tree-body">
+                                  <span>1.1生活 数学</span>
+                                </div>
+                                <a class="pl-tree-search pl-iconbtn" @click="$router.push('/questions')"><i class="pl-ico xsearch2"></i></a>
+                              </div>
+                            </li>
+                            <li class="pl-tree-node">
+                              <div class="pl-tree-content">
+                                <div class="pl-tree-body">
+                                  <span>1.2活动 思考数学的乐趣</span>
+                                </div>
+                                <a class="pl-tree-search pl-iconbtn" @click="$router.push('/questions')"><i class="pl-ico xsearch2"></i></a>
+                              </div>
+                            </li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
                 </li>
               </ul>
             </li>

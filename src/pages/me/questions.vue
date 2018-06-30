@@ -1,6 +1,6 @@
 <template>
   <div class="pl-body">
-    <a class="pl-headerbtn" @click="$router.push('/question-cart')">试题篮</a>
+    <a class="pl-headerbtn" @click="$router.push('/question-cart')">试题篮<span>{{questionNum}}</span></a>
 
     <div class="pl-body-content">
       <!-- 单/多选题 -->
@@ -33,7 +33,7 @@
         </div>
         <div class="pl-question-tools" @click.stop>
           <a class="pl-question-tool-btn"><i class="pl-ico xfavorite xdone"></i>取消收藏</a>
-          <a class="pl-question-tool-btn"><i class="pl-ico xtadd"></i>加入试题篮</a>
+          <a class="pl-question-tool-btn" @click="addQuestionToCart"><i class="pl-ico xtadd"></i>加入试题篮</a>
         </div>
       </div>
       <!-- /单/多选题 -->
@@ -55,7 +55,7 @@
         </div>
         <div class="pl-question-tools" @click.stop>
           <a class="pl-question-tool-btn"><i class="pl-ico xfavorite xdone"></i>取消收藏</a>
-          <a class="pl-question-tool-btn"><i class="pl-ico xtadd"></i>加入试题篮</a>
+          <a class="pl-question-tool-btn" @click="addQuestionToCart"><i class="pl-ico xtadd"></i>加入试题篮</a>
         </div>
       </div>
       <!-- /填空题 -->
@@ -129,7 +129,7 @@
         </div>
         <div class="pl-question-tools" @click.stop>
           <a class="pl-question-tool-btn"><i class="pl-ico xfavorite xdone"></i>取消收藏</a>
-          <a class="pl-question-tool-btn"><i class="pl-ico xtadd"></i>加入试题篮</a>
+          <a class="pl-question-tool-btn" @click="addQuestionToCart"><i class="pl-ico xtadd"></i>加入试题篮</a>
         </div>
       </div>
       <!-- /连线题 -->
@@ -154,7 +154,7 @@
         </div>
         <div class="pl-question-tools" @click.stop>
           <a class="pl-question-tool-btn"><i class="pl-ico xfavorite xdone"></i>取消收藏</a>
-          <a class="pl-question-tool-btn"><i class="pl-ico xtadd"></i>加入试题篮</a>
+          <a class="pl-question-tool-btn" @click="addQuestionToCart"><i class="pl-ico xtadd"></i>加入试题篮</a>
         </div>
       </div>
       <!-- /判断题 -->
@@ -213,7 +213,7 @@
         </div>
         <div class="pl-question-tools" @click.stop>
           <a class="pl-question-tool-btn"><i class="pl-ico xfavorite xdone"></i>取消收藏</a>
-          <a class="pl-question-tool-btn"><i class="pl-ico xtadd"></i>加入试题篮</a>
+          <a class="pl-question-tool-btn" @click="addQuestionToCart"><i class="pl-ico xtadd"></i>加入试题篮</a>
         </div>
       </div>
       <!-- /跟读题+听力题+综合题 -->
@@ -234,7 +234,7 @@
         </div>
         <div class="pl-question-tools" @click.stop>
           <a class="pl-question-tool-btn"><i class="pl-ico xfavorite xdone"></i>取消收藏</a>
-          <a class="pl-question-tool-btn"><i class="pl-ico xtadd"></i>加入试题篮</a>
+          <a class="pl-question-tool-btn" @click="addQuestionToCart"><i class="pl-ico xtadd"></i>加入试题篮</a>
         </div>
       </div>
       <!-- /简答题 -->
@@ -243,8 +243,23 @@
 </template>
 
 <script>
+import animate from '@/mixin/animate'
+
 export default {
   name: 'me-questions',
+  data () {
+    return {
+      questionNum: 0
+    }
+  },
+  mixins: [animate],
+  methods: {
+    addQuestionToCart (event) {
+      this.animateAddQuestion({top: event.pageY, left: event.pageX}, () => {
+        this.questionNum++
+      })
+    }
+  },
   created () {
     this.$store.commit('setPageTitle', '试题收藏(50套)')
   }

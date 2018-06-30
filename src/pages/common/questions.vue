@@ -1,8 +1,8 @@
 <template>
   <div class="pl-body">
-    <a class="pl-headerbtn" @click="$router.push('/question-cart')">试题篮</a>
+    <a class="pl-headerbtn" @click="$router.push('/question-cart')">试题篮<span>{{questionNum}}</span></a>
 
-    <div class="pl-body-content">
+    <div class="pl-body-content" style="padding-bottom:3rem;">
       <!-- 单/多选题 -->
       <div class="pl-question" @click="$router.push('/question-detail')">
         <div class="pl-question-title">
@@ -33,7 +33,7 @@
         </div>
         <div class="pl-question-tools" @click.stop>
           <a class="pl-question-tool-btn"><i class="pl\-ico xfavorite"></i>收藏</a>
-          <a class="pl-question-tool-btn"><i class="pl-ico xtadd"></i>加入试题篮</a>
+          <a class="pl-question-tool-btn" @click="addQuestionToCart"><i class="pl-ico xtadd"></i>加入试题篮</a>
         </div>
       </div>
       <!-- /单/多选题 -->
@@ -55,7 +55,7 @@
         </div>
         <div class="pl-question-tools" @click.stop>
           <a class="pl-question-tool-btn"><i class="pl\-ico xfavorite"></i>收藏</a>
-          <a class="pl-question-tool-btn"><i class="pl-ico xtadd"></i>加入试题篮</a>
+          <a class="pl-question-tool-btn" @click="addQuestionToCart"><i class="pl-ico xtadd"></i>加入试题篮</a>
         </div>
       </div>
       <!-- /填空题 -->
@@ -129,7 +129,7 @@
         </div>
         <div class="pl-question-tools" @click.stop>
           <a class="pl-question-tool-btn"><i class="pl\-ico xfavorite"></i>收藏</a>
-          <a class="pl-question-tool-btn"><i class="pl-ico xtadd"></i>加入试题篮</a>
+          <a class="pl-question-tool-btn" @click="addQuestionToCart"><i class="pl-ico xtadd"></i>加入试题篮</a>
         </div>
       </div>
       <!-- /连线题 -->
@@ -154,7 +154,7 @@
         </div>
         <div class="pl-question-tools" @click.stop>
           <a class="pl-question-tool-btn"><i class="pl\-ico xfavorite"></i>收藏</a>
-          <a class="pl-question-tool-btn"><i class="pl-ico xtadd"></i>加入试题篮</a>
+          <a class="pl-question-tool-btn" @click="addQuestionToCart"><i class="pl-ico xtadd"></i>加入试题篮</a>
         </div>
       </div>
       <!-- /判断题 -->
@@ -213,7 +213,7 @@
         </div>
         <div class="pl-question-tools" @click.stop>
           <a class="pl-question-tool-btn"><i class="pl\-ico xfavorite"></i>收藏</a>
-          <a class="pl-question-tool-btn"><i class="pl-ico xtadd"></i>加入试题篮</a>
+          <a class="pl-question-tool-btn" @click="addQuestionToCart"><i class="pl-ico xtadd"></i>加入试题篮</a>
         </div>
       </div>
       <!-- /跟读题+听力题+综合题 -->
@@ -234,19 +234,108 @@
         </div>
         <div class="pl-question-tools" @click.stop>
           <a class="pl-question-tool-btn"><i class="pl\-ico xfavorite"></i>收藏</a>
-          <a class="pl-question-tool-btn"><i class="pl-ico xtadd"></i>加入试题篮</a>
+          <a class="pl-question-tool-btn" @click="addQuestionToCart"><i class="pl-ico xtadd"></i>加入试题篮</a>
         </div>
       </div>
       <!-- /简答题 -->
     </div>
+
+    <!-- 底部工具按钮 -->
+    <div class="pl-footer xtools">
+      <a><i class="pl-ico xdownload"></i>下载试卷</a>
+      <a @click="setAnswerCardPopupVisible = true"><i class="pl-ico xac"></i>下载答题卡</a>
+      <a><i class="pl-ico xfavorite2 xdone"></i>取消收藏</a>
+      <a>保存修改</a>
+    </div>
+    <!-- /底部工具按钮 -->
+
+    <!-- 弹出层：筛选学段 -->
+    <mt-popup class="xheader"
+      v-model="setAnswerCardPopupVisible"
+      position="bottom">
+      <div class="pl-popup-body" style="padding-bottom:0;">
+        <div class="pl-title xquestion">
+          <div class="pl-title-left">设置答题卡</div>
+        </div>
+        <div class="pl-popup-label">设置答题卡布局</div>
+        <ul class="pl-grid x4 xpopup">
+          <li class="pl-grid-col">
+            <i class="pl-ico xcol1" :class="{xselected: 1 === 1}"></i>
+          </li>
+          <li class="pl-grid-col">
+            <i class="pl-ico xcol2"></i>
+          </li>
+          <li class="pl-grid-col">
+            <i class="pl-ico xcol3"></i>
+          </li>
+          <li class="pl-grid-col">
+            <div class="pl-answercart-note">一栏建议A4两/三栏建议A3、8k纸张</div>
+          </li>
+        </ul>
+        <div class="pl-popup-label">选择考号版式</div>
+        <ul class="pl-grid x4 xpopup">
+          <li class="pl-grid-col">
+            <div class="pl-tag" :class="{xselected: 1 === 1}">
+              <div class="pl-tag-body">条形码</div>
+            </div>
+          </li>
+          <li class="pl-grid-col">
+            <div class="pl-tag">
+              <div class="pl-tag-body">准考证号</div>
+            </div>
+          </li>
+        </ul>
+        <div class="pl-popup-label">设置禁止作答区</div>
+        <ul class="pl-grid x4 xpopup">
+          <li class="pl-grid-col">
+            <div class="pl-tag" :class="{xselected: 1 === 1}">
+              <div class="pl-tag-body">启用</div>
+            </div>
+          </li>
+          <li class="pl-grid-col">
+            <div class="pl-tag">
+              <div class="pl-tag-body">禁用</div>
+            </div>
+          </li>
+        </ul>
+        <mt-cell title="按题号排序">
+          <mt-switch v-model="demoValue" />
+        </mt-cell>
+        <mt-cell title="添加页脚">
+          <mt-switch v-model="demoValue" />
+        </mt-cell>
+      </div>
+      <div class="pl-popup-footer">
+        <a class="pl-popup-btn">清空筛选</a>
+        <a class="pl-popup-btn">确定</a>
+      </div>
+    </mt-popup>
+    <!-- /弹出层：筛选学段 -->
   </div>
 </template>
 
 <script>
+import animate from '@/mixin/animate'
+
 export default {
   name: 'pl-questions',
+  data () {
+    return {
+      setAnswerCardPopupVisible: false,
+      demoValue: '',
+      questionNum: 0
+    }
+  },
+  mixins: [animate],
+  methods: {
+    addQuestionToCart (event) {
+      this.animateAddQuestion({top: event.pageY, left: event.pageX}, () => {
+        this.questionNum++
+      })
+    }
+  },
   created () {
-    this.$store.commit('setPageTitle', '试题列表')
+    this.$store.commit('setPageTitle', '2017-2018学年七年级英语上')
   }
 }
 </script>
