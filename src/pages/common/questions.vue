@@ -184,6 +184,10 @@
                 <li><b>D.</b> Option item Option item Option item Option item Option item Option item</li>
               </ul>
             </div>
+            <div class="pl-question-props" @click.stop style="margin-top:0;">
+              <span>知识点1</span>
+              <span>知识点2</span>
+            </div>
           </div>
           <!-- /单/多选题 -->
 
@@ -200,6 +204,10 @@
                 <li><b>C.</b> Option item Option item Option item Option item Option item Option item</li>
                 <li><b>D.</b> Option item Option item Option item Option item Option item Option item</li>
               </ul>
+            </div>
+            <div class="pl-question-props" @click.stop style="margin-top:0;">
+              <span>知识点1</span>
+              <span>知识点2</span>
             </div>
           </div>
           <!-- /单/多选题 -->
